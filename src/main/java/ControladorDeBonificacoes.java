@@ -1,8 +1,10 @@
-public class ControladorDeBonificacoes {
+public class ControladorDeBonificacoes
+{
     private float totalDeBonificacoes = 0;
 
-    public void adicionaBonificacaoDe(Funcionario funcionario){
-        this.totalDeBonificacoes += funcionario.calculaBonificacao();
+    public float adicionaBonificacaoDe(Funcionario funcionario)
+    {
+        return this.totalDeBonificacoes += funcionario.calculaBonificacao();
     }
 
     public float recuperaTotalDeBonificacoes()

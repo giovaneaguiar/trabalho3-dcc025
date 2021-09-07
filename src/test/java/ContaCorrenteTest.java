@@ -25,7 +25,7 @@ class ContaCorrenteTest {
                     3000,
                     1
             );
-
+            fail();
         } catch (IllegalArgumentException e) {
             assertEquals("Conta sem titular!", e.getMessage());
 
@@ -42,6 +42,7 @@ class ContaCorrenteTest {
                     0,
                     1
             );
+            fail();
 
         } catch (NullPointerException e) {
             assertEquals("Conta sem saldo!", e.getMessage());
@@ -57,6 +58,7 @@ class ContaCorrenteTest {
                     4000,
                     0
             );
+            fail();
         } catch (NullPointerException e) {
             assertEquals("Sem contas cadastradas!", e.getMessage());
         }
@@ -86,6 +88,7 @@ class ContaCorrenteTest {
                     1
             );
             contaCorrente.saca(4000);
+            fail();
         }
          catch (NullPointerException e){
             assertEquals("Saque indisponível!", e.getMessage());
@@ -117,6 +120,7 @@ class ContaCorrenteTest {
                     1
             );
             contaCorrente.deposita(-4000);
+            fail();
         }
         catch (NullPointerException e){
             assertEquals("O valor a depositar precisa ser positivo!", e.getMessage());
@@ -160,6 +164,7 @@ class ContaCorrenteTest {
                     3000,
                     1
             );
+
         }
 
         catch (IllegalArgumentException e) {
@@ -167,7 +172,4 @@ class ContaCorrenteTest {
         }
 
     }
-
-
-
 }

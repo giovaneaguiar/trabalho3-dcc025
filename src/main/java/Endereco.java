@@ -1,11 +1,12 @@
-public class Endereco {
-
+public class Endereco
+{
     private String cidade;
     private String bairro;
     private String rua;
     private String numero;
 
-    public Endereco(String cidade, String bairro, String rua, String numero) {
+    public Endereco(String cidade, String bairro, String rua, String numero)
+    {
         if (cidade == null) {
             throw new IllegalArgumentException("Cidade nula!");
         }

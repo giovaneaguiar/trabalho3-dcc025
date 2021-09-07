@@ -1,5 +1,5 @@
-public interface Autenticavel {
-
-    public boolean funcionarioPodeAutenticar(String senha);
+public interface Autenticavel
+{
+    boolean funcionarioPodeAutenticar(String senha);
 
 }

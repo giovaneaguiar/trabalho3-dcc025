@@ -1,6 +1,12 @@
 import javax.imageio.IIOException;
 
-public class Pessoa {
+public class Pessoa
+{
+    /*
+       Nome: Giovane Machado Aguiar
+       Matrícula: 201876019
+       Obrigado <3
+    */
 
     private String nome;
     private String numeroCpf;
@@ -21,17 +27,20 @@ public class Pessoa {
         this.numeroCpf = numeroCpf;
     }
 
-    public Pessoa(String nome, String numeroCpf) {
+    public Pessoa(String nome, String numeroCpf)
+    {
         super();
+
         if ( nome == null || nome.equals("")) {
             throw new IllegalArgumentException("Nome nulo!");
         }
-        if (nome.length() < 3 ){
+        if (nome.length() < 3 ) {
             throw new IllegalArgumentException("O nome precisa ter pelo menos 3 caracteres");
         }
-        if (numeroCpf == null || numeroCpf.equals("")){
+        if (numeroCpf == null || numeroCpf.equals("")) {
             throw new IllegalArgumentException("CPF nulo!");
         }
+
         this.nome = nome;
         this.numeroCpf = numeroCpf;
     }

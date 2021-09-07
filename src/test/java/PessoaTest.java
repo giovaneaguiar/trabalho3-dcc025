@@ -23,6 +23,7 @@ class PessoaTest {
                     null,
                     "123.456.789.10"
             );
+            fail();
         } catch (IllegalArgumentException e) {
             assertEquals("Nome nulo!", e.getMessage());
         }
@@ -34,6 +35,7 @@ class PessoaTest {
                     "Gi",
                     "123.456.789.10"
             );
+            fail();
         } catch (IllegalArgumentException e) {
             assertEquals("O nome precisa ter pelo menos 3 caracteres", e.getMessage());
         }
@@ -46,9 +48,9 @@ class PessoaTest {
                     "Giovane",
                     null
             );
+            fail();
         } catch (IllegalArgumentException e) {
             assertEquals("CPF nulo!", e.getMessage());
         }
     }
-
 }

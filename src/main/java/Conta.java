@@ -1,8 +1,7 @@
-public abstract class Conta {
-
+public abstract class Conta
+{
     private Titular titular;
     private float saldo;
-    private int numeroDeContas;
 
     public Titular getTitular() {
         return titular;
@@ -20,18 +19,9 @@ public abstract class Conta {
         this.saldo = saldo;
     }
 
-    public int getNumeroDeContas() {
-        return numeroDeContas;
-    }
-
-    public void setNumeroDeContas(int numeroDeContas) {
-        this.numeroDeContas = numeroDeContas;
-    }
-
-    public Conta(Titular titular, float saldo, int numeroDeContas) {
+    public Conta(Titular titular, float saldo) {
         this.titular = titular;
         this.saldo = saldo;
-        this.numeroDeContas++;
     }
 
     public float saca(float valorASacar)
@@ -41,7 +31,6 @@ public abstract class Conta {
         if (valorSaque > this.saldo) {
              throw new NullPointerException("Saque indisponível!");
         }
-
          return this.saldo -= valorSaque;
     }
 
@@ -54,5 +43,4 @@ public abstract class Conta {
     }
 
     abstract protected float percentualTarifa();
-
 }

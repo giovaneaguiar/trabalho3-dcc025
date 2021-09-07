@@ -1,7 +1,8 @@
 public class ContaPoupanca extends Conta
 {
     public ContaPoupanca(Titular titular, float saldo, int numeroDeContas) {
-        super(titular, saldo, numeroDeContas);
+        super(titular, saldo);
+
         if (titular == null) {
             throw new IllegalArgumentException("Conta sem titular!");
         }
@@ -17,6 +18,5 @@ public class ContaPoupanca extends Conta
     {
         return (float) 0.03;
     }
-
 }
 

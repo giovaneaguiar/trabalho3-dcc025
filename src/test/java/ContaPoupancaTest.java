@@ -24,6 +24,7 @@ class ContaPoupancaTest {
                     3000,
                     1
             );
+            fail();
 
         } catch (IllegalArgumentException e) {
             assertEquals("Conta sem titular!", e.getMessage());
@@ -41,7 +42,7 @@ class ContaPoupancaTest {
                     0,
                     1
             );
-
+            fail();
         } catch (NullPointerException e) {
             assertEquals("Conta sem saldo!", e.getMessage());
         }
@@ -56,6 +57,7 @@ class ContaPoupancaTest {
                     4000,
                     0
             );
+            fail();
         } catch (NullPointerException e) {
             assertEquals("Sem contas cadastradas!", e.getMessage());
         }
@@ -83,6 +85,7 @@ class ContaPoupancaTest {
                     1
             );
             contaPoupanca.saca(4000);
+            fail();
         } catch (NullPointerException e) {
             assertEquals("Saque indisponível!", e.getMessage());
         }
@@ -111,6 +114,7 @@ class ContaPoupancaTest {
                     1
             );
             contaPoupanca.deposita(-4000);
+            fail();
         } catch (NullPointerException e) {
             assertEquals("O valor a depositar precisa ser positivo!", e.getMessage());
         }

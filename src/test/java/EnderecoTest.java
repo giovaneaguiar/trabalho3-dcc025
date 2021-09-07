@@ -26,8 +26,7 @@ class EnderecoTest {
                     "Braz Bernardino",
                     "106"
             );
-
-
+            fail();
         } catch (IllegalArgumentException e) {
             assertEquals("Bairro nulo!", e.getMessage());
         }
@@ -43,8 +42,7 @@ class EnderecoTest {
                     null,
                     "106"
             );
-
-
+            fail();
         } catch (IllegalArgumentException e) {
             assertEquals("Rua nula!", e.getMessage());
         }
@@ -60,12 +58,10 @@ class EnderecoTest {
                     "Braz Bernardino",
                     null
             );
-
-
+            fail();
         } catch (IllegalArgumentException e) {
             assertEquals("Número nulo!", e.getMessage());
         }
     }
-
 
 }

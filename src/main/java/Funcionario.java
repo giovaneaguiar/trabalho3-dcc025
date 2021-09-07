@@ -1,5 +1,7 @@
-public abstract class Funcionario extends Pessoa {
+public abstract class Funcionario extends Pessoa
+{
     private String cargo;
+    private float salario;
 
     public String getCargo() {
         return cargo;
@@ -17,22 +19,26 @@ public abstract class Funcionario extends Pessoa {
         this.salario = salario;
     }
 
-    private float salario;
-
-    public Funcionario(String nome, String numeroCpf, String cargo, float salario) {
+    public Funcionario(String nome, String numeroCpf, String cargo, float salario)
+    {
         super(nome, numeroCpf);
+        if (cargo == null) {
+            throw new IllegalArgumentException("Cargo nulo!");
+        }
+        if ( salario == 0) {
+            throw new NullPointerException("Salário nulo!");
+        }
         this.cargo = cargo;
         this.salario = salario;
-
     }
 
-    public void recebeAumento(double valorAumento){
-        if (valorAumento <= 0 ){
+    public float recebeAumento(double valorAumento)
+    {
+        if (valorAumento <= 0 ) {
             throw new IllegalArgumentException("O aumento deve ser positivo!");
         }
-        this.salario += valorAumento;
+        return this.salario += valorAumento;
     }
 
     abstract public float calculaBonificacao();
-
 }

@@ -1,8 +1,7 @@
-import java.util.Objects;
-
-public class Diretor extends Funcionario implements Autenticavel {
-
-    public Diretor(String nome, String numeroCpf, String cargo, float salario) {
+public class Diretor extends Funcionario implements Autenticavel
+{
+    public Diretor(String nome, String numeroCpf, String cargo, float salario)
+    {
         super(nome, numeroCpf, cargo, salario);
     }
 
@@ -11,7 +10,8 @@ public class Diretor extends Funcionario implements Autenticavel {
         return this.getSalario() * 2;
     }
 
-    public boolean funcionarioPodeAutenticar(String senha){
+    public boolean funcionarioPodeAutenticar(String senha)
+    {
         return senha.equals("1234");
     }
 }

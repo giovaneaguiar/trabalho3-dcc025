@@ -13,7 +13,8 @@ class AutenticadorTest {
                 "Diretor", 3000);
         autenticador.tentaLogin(diretor, "1234");
 
-        assertEquals(true, diretor.funcionarioPodeAutenticar("1234"));
+        assertTrue(diretor.funcionarioPodeAutenticar("1234"));
+        // Aqui utilizei o assertTrue.
     }
 
     @Test
@@ -26,6 +27,7 @@ class AutenticadorTest {
         autenticador.tentaLogin(gerente, "4321");
 
         assertEquals(true, gerente.funcionarioPodeAutenticar("4321"));
+        // Aqui utilizei o assertEquals.
     }
 
     @Test
@@ -37,6 +39,7 @@ class AutenticadorTest {
                     "123.456.789-10",
                     "Diretor", 3000);
             autenticador.tentaLogin(diretor, "0000");
+            fail();
         }
         catch (IllegalArgumentException e) {
             assertEquals("Ops. Senha incorreta!", e.getMessage());
@@ -52,6 +55,7 @@ class AutenticadorTest {
                     "123.456.789-10",
                     "Gerente", 3000);
             autenticador.tentaLogin(gerente, "0000");
+            fail();
         }
         catch (IllegalArgumentException e) {
             assertEquals("Ops. Senha incorreta!", e.getMessage());
